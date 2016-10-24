@@ -1,4 +1,13 @@
-# multithreading
+##### embarrassingly parallel computation is embarrassingly easy
+
+# This computation is automatically distributed across
+# all available compute nodes, and the result, reduced by summation (+),
+# is returned at the calling node.
+nheads = @parallel (+) for i=1:10000
+  rand(Bool)
+end
+
+#### multithreading
 
 # at the command line,
 # export JULIA_NUM_THREADS=4
